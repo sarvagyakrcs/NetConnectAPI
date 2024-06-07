@@ -1,6 +1,6 @@
 # NetConnect
 
-[![Node.js CI](https://github.com/sarvagyakrcs/NetConnect/actions/workflows/node.js.yml/badge.svg)](https://github.com/sarvagyakrcs/NetConnect/actions)
+<!-- [![Node.js CI](https://github.com/sarvagyakrcs/NetConnect/actions/workflows/node.js.yml/badge.svg)](https://github.com/sarvagyakrcs/NetConnect/actions) -->
 
 ## Description
 
