@@ -9,7 +9,14 @@
 import express, { Request, Response, Application } from 'express';
 
 /**
- * User ID retrieval function import
+ * File Path retrieval function import
+ * @package ../utils/data/file
+ * @param {Function} get_file_by_path - Function to retrieve file  by it's path.
+ */
+import { get_file_by_path } from '../utils/data/file';
+
+/**
+ * User Data retrieval function import
  * @package ../utils/data/users
  * @param {Function} get_user_id_by_username - Function to retrieve user ID by username.
  * @param {Function} get_user_by_username - Function to retrieve user by username.
@@ -28,7 +35,6 @@ const fs = require("fs")
  * @param {Object} db - The Prisma database instance.
  */
 import db from '../utils/prisma';
-import { get_file_by_path } from '../utils/data/file';
 
 /**
  * Prisma database instance.
