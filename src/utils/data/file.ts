@@ -10,9 +10,7 @@ export const get_file_by_path = async (path: string) => {
     })
 
     if(!file){
-        return ({
-            "error" : "File Does Not Exists."
-        })
+        return null;
     }
 
     return file;

@@ -18,6 +18,17 @@ model VerificationToken {
   email String 
   token      String @unique
   expires    DateTime
+  jti String? @unique
+ 
+  @@unique([email, token])
+}
+
+model RefreshToken {
+  id String @id @default(cuid())
+  email String 
+  token      String @unique
+  expires    DateTime
+  jti String? @unique
  
   @@unique([email, token])
 }
@@ -27,6 +38,7 @@ model PasswordResetToken {
   email String 
   token      String @unique
   expires    DateTime
+  jti String? @unique
  
   @@unique([email, token])
 }

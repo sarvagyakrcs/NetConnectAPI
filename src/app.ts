@@ -4,6 +4,7 @@
 import express, { Request, Response, Application } from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
+const cookieParser = require("cookie-parser"); 
 
 
 // ------------------------------
@@ -24,6 +25,7 @@ app.set('views', path.join(__dirname, 'views'));
 // ------------------------------
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser())
 
 // ------------------------------
 // ROUTES
@@ -35,11 +37,19 @@ app.use(express.urlencoded({ extended: true }));
  * @description Serve welcome message
  * @returns {Object} JSON object with welcome message
  */
-app.get('/', (req: Request, res: Response) => {
-    res.json({
-        message: 'Welcome to Express & TypeScript Server'
-    });
-});
+// app.get('/', (req: Request, res: Response) => {
+//     res.json({
+//         message: 'Welcome to Express & TypeScript Server'
+//     });
+// });
+
+app.get('/', function (req, res) {
+    // Cookies that have not been signed
+    console.log('Cookies: ', req.cookies)
+  
+    // Cookies that have been signed
+    console.log('Signed Cookies: ', req.signedCookies)
+  })
 
 // Hello Route
 /**
@@ -56,11 +66,11 @@ app.get('/hello', (req: Request, res: Response) => {
 // ------------------------------
 
 // User Routes
-const usersRoutes = require("./routes/user");
+const usersRoutes = require("./routes/userRoutes");
 app.use("/users", usersRoutes);
 
 // File Upload Routes
-const fileUploadRoutes = require("./routes/file_upload");
+const fileUploadRoutes = require("./routes/fileUploadRoutes");
 app.use("/file_upload", fileUploadRoutes);
 
 // Admin Routes

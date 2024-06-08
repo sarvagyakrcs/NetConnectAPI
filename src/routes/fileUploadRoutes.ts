@@ -1,16 +1,13 @@
 import express, { Request, Response, Application } from 'express';
 import db from '../utils/prisma';
 const router = express.Router();
-const controller = require("../controllers/file_upload_controllers")
-const middlewares = require("../middlewares/file_upload_middlewares")
+const controller = require("../controllers/fileUploadControllers")
+const middlewares = require("../middlewares/fileUploadMiddlewares")
 
 /**
  * Prisma Client
  */
 const prisma = db;
-
-
-
 
 /**
  * Endpoints
